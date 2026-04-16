@@ -14,11 +14,11 @@ class Solution {
 
         val count = HashMap<Int, Int>(nums.size + 1)
         var res = 0
-        // 子数组的和 = k => s[j] - s[i] = k
-        for (i in nums.indices) {
-            val x = k - preSum[i]
+        // 子数组的和 = k => s[j] - s[i] = k => s[i] = s[j] - k
+        for (num in preSum) {
+            val x = num - k
             res += count.getOrDefault(x, 0)
-            count[nums[i]] = count.getOrDefault(nums[i], 0)
+            count[num] = count.getOrDefault(num, 0) + 1
         }
 
         return res

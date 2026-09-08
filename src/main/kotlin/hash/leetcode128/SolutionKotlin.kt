@@ -10,13 +10,13 @@ class SolutionKotlin {
         }
 
         var res = 0
-        for (num in set) {
-            if (set.contains(num - 1)) continue
+        for (element in set) {
+            if (set.contains(element - 1)) continue
 
-            var right = num + 1
+            var right = element + 1
             while (set.contains(right)) right++
 
-            res = max(res, right - num)
+            res = max(res, right - element)
         }
         return res
     }

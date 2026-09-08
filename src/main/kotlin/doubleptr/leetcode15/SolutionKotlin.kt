@@ -27,7 +27,7 @@ class SolutionKotlin {
             while (left < right) {
                 val sum = x + nums[left] + nums[right]
                 if (sum > 0) {
-                    right--;
+                    right--
                 } else if (sum < 0) {
                     left++
                 } else {

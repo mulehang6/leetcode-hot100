@@ -1,7 +1,7 @@
 package doubleptr.leetcode283
 
 class SolutionKotlin {
-    fun moveZeroes(nums: IntArray): Unit {
+    fun moveZeroes(nums: IntArray) {
         var i0 = 0
         for (i in nums.indices) {
             if (nums[i] != 0) {

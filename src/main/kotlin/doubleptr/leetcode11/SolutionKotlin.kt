@@ -13,9 +13,9 @@ class SolutionKotlin {
             val area = (right - left) * min(height[left], height[right])
             res = max(res, area)
             if (height[left] < height[right]) {
-                left++;
+                left++
             } else {
-                right--;
+                right--
             }
         }
 

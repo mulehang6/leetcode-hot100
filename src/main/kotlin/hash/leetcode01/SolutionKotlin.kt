@@ -5,7 +5,7 @@ package hash.leetcode01
  */
 class SolutionKotlin {
     fun twoSum(nums: IntArray, target: Int): IntArray {
-        val map = HashMap<Int, Int>()// 实际的数(key) -> 下标(value)
+        val map = mutableMapOf<Int, Int>()
         for (i in nums.indices) {
             val x = nums[i]
             val remain = target - x

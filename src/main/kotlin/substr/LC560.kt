@@ -1,0 +1,24 @@
+package substr
+
+/**
+ * 力扣 560
+ *
+ * 给你一个整数数组 `nums` 和一个整数 `k` ，请你统计并返回 该数组中和为 `k` 的子数组的个数 。
+ */
+fun subarraySum(nums: IntArray, k: Int): Int {
+    val preSum = IntArray(nums.size + 1)
+    for (i in nums.indices) {
+        preSum[i + 1] = preSum[i] + nums[i]
+    }
+
+    val count = HashMap<Int, Int>(nums.size + 1)
+    var res = 0
+    // 子数组的和 = k => s[j] - s[i] = k => s[i] = s[j] - k
+    for (num in preSum) {
+        val x = num - k
+        res += count.getOrDefault(x, 0)
+        count[num] = count.getOrDefault(num, 0) + 1
+    }
+
+    return res
+}

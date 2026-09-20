@@ -1,4 +1,4 @@
-package tbd.leetcode303
+package tbd
 
 /**
  * 给定一个整数数组`nums`，处理以下类型的多个查询:
